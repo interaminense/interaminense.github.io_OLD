@@ -8,21 +8,21 @@ var clean = require('gulp-clean');
 var browserSync = require('browser-sync').create();
 
 gulp.task('sass', function() {
-    gulp.src('docs/**/*.scss')
+    gulp.src('css/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(cssmin())
         .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('docs/'))
+        .pipe(gulp.dest('css/'))
         .pipe(browserSync.stream());
 });
 
 gulp.task('default', function() {
     browserSync.init({
         server: {
-            baseDir: './docs'
+            baseDir: './'
         }
     });
-    gulp.watch('docs/**/*.scss', ['sass']);
-    gulp.watch('docs/**/*.html').on('change', browserSync.reload);
-    gulp.watch('docs/**/*.js').on('change', browserSync.reload);
+    gulp.watch('css/*.scss', ['sass']);
+    gulp.watch('*.html').on('change', browserSync.reload);
+    gulp.watch('js/*.js').on('change', browserSync.reload);
 });
