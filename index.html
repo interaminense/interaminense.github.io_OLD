@@ -5,10 +5,11 @@
     <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
     <link href="fonts/css/fontello.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.min.css" rel="stylesheet">
+    <link href="css/responsive.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -16,15 +17,14 @@
     <canvas class="color-changing" id="c"></canvas>
     <div class="picture container container--a flex flex--align-center-center">
         <div>
-            <div class="flex flex--align-center-center">
-                <div class="thumbnail thumbnail--size-120 thumbnail--radius animated flipInY">
+            <div class="flex flex--responsive flex--align-center-center">
+                <div class="thumbnail thumbnail--size-120 thumbnail--size-90--responsive thumbnail--radius animated flipInY">
                     <img src="https://avatars.githubusercontent.com/u/12699849" alt="">
                 </div>
-                <div class="el-1 gap gap--left">Adriano</div>
-                <div class="el-2 gap gap--left">Interaminense</div>
+                <div class="el-1 gap gap--left no-gap-responsive">Adriano</div>
+                <div class="el-2 gap gap--left no-gap-responsive">Interaminense</div>
             </div>
-            <div class="about-text animated fadeIn animated--delay-default">
-                <!--Olá, sou Adriano Interaminense! A 8 anos atrás iniciei na carreira profissional como WebDesign e hoje sou Desenvolvedor Front-End. Amo que faço e sempre procuro estar atualizado com as novas tecnologias, isso é um Hobby para mim!-->
+            <div class="about-text gap gap--top animated fadeIn animated--delay-default">
                 Hi 😉, I'm <strong>Adriano Interaminense</strong>. Since 2009 I started my professional career as WebDesign and today I am a <strong>Front End Developer</strong> and <strong>Interaction Design</strong> at <a target="_blank" href="http://www.facilit.com.br">Facilit Tecnologia</a>,
                 Recife. I ❤️️ what I do and I always try to be updated with the new technologies, this is a Hobby for me! <br>Get to know my work through social networks
             </div>
@@ -45,43 +45,7 @@
     <script src="js/anime.min.js"></script>
     <script src="js/color-changing.js"></script>
 
-    <script>
-        var el1 = document.querySelector('.el-1');
-        var el2 = document.querySelector('.el-2');
-
-        var options = {
-            name1: {
-                size: 150,
-                weight: 10,
-                rounded: false,
-                color: '#fff',
-                duration: 1,
-                delay: [0, 0.1],
-                fade: 0.5,
-                easing: d3_ease.easeCubicInOut.ease,
-                individualDelays: false
-            },
-            name2: {
-                size: 50,
-                weight: 4,
-                rounded: false,
-                color: 'rgba(255, 255, 255, .8)',
-                duration: 1,
-                delay: [0, 0.1],
-                fade: 0.5,
-                easing: d3_ease.easeCubicInOut.ease,
-                individualDelays: false
-            }
-        };
-
-        var anim1 = new Letters(el1, options.name1);
-        var anim2 = new Letters(el2, options.name2);
-
-        anim1.show();
-        setTimeout(function() {
-            anim2.show();
-        }, 100);
-    </script>
+    <script src="js/script.js"></script>
 
     <!--Google Analytics-->
     <script>
