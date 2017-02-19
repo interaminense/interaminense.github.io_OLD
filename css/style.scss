@@ -79,7 +79,6 @@ a {
     position: absolute;
     left: 0;
     top: 0;
-    opacity: .9;
     width: 100%;
     height: 100%;
 }
@@ -93,6 +92,8 @@ a {
     font-size: 1.2em;
     font-weight: 100;
     padding: 0 30px;
+    line-height: 1.6em;
+    cursor: default;
 }
 
 .social-media {
@@ -107,8 +108,8 @@ a {
         border-radius: 50%;
         border: 0 none;
         &:hover {
-            background-color: #fff;
-            color: #000;
+            background-color: rgba(255, 255, 255, 0.13);
+            color: #ffffff;
         }
     }
     .social-media__iconfont:nth-child(1) {
