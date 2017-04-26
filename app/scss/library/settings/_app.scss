@@ -1,0 +1,65 @@
+//
+//Reseting css
+
+body, html {
+  margin: 0;
+  padding: 0;
+  @extend %size-full;
+}
+
+.circle {
+  @extend %circle;
+  img {
+    @extend %size-full;
+  }
+}
+
+//gaps
+
+.left-gap { margin-left: $lp-spacement-b !important; }
+.right-gap { margin-right: $lp-spacement-b !important; }
+.top-gap { margin-top: $lp-spacement-b !important; }
+.bottom-gap { margin-bottom: $lp-spacement-b !important; }
+
+.no-left-gap { margin-left: 0 !important; }
+.no-right-gap { margin-right: 0 !important; }
+.no-top-gap { margin-top: 0 !important; }
+.no-bottom-gap { margin-bottom: 0 !important; }
+
+//
+//App
+//'lp' required prefix in all classes
+//using method BEM by @interaminense
+
+.lp {
+  height: 100%;
+
+  .lp__side {
+    background-color: $primary-color;
+    max-width: $lp-side-w;
+  }
+  .lp__content {
+    font-family: $font-family-secondary;
+  }
+  .lp__side, .lp__content {
+    padding: $lp-spacement;
+    width: 100%;
+  }
+
+  //side only
+  .lp__side-image {
+    width: $lp-side-image-w;
+    height: $lp-side-image-w;
+    margin: 0 auto #{$lp-spacement-b * 4} auto;
+  }
+}
+
+//classes flexbox
+.lp-flex {
+  display: flex;
+
+  &.lp-flex--centered, .lp-flex__centered {
+    justify-content: center;
+    align-items: center;
+  }
+}
