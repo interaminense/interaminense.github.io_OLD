@@ -1,0 +1,12 @@
+//Mixins
+//
+
+//text-align
+@mixin text-align($align) {
+  text-align: $align;
+}
+
+//text-transform
+@mixin text-transform($transform) {
+  text-transform: $transform;
+}
