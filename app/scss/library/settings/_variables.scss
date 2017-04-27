@@ -4,8 +4,15 @@
 //Font
 $font-family-primary: 'Roboto', sans-serif !default;
 $font-family-secondary: 'Roboto Slab', serif !default;
-$font-size-default: 14px !default;
-$line-height-default: 1.5em !default;
+$font-size-default: 16px !default;
+$line-height-default: 1.8em !default;
+
+//Badge
+$badge-padding: 4px 6px;
+$badge-radius: 5px;
+$badge-font-size: .7em;
+$badge-font-family: $font-family-primary;
+$badge-font-weight: 500;
 
 //Variables LP
 //
@@ -13,7 +20,13 @@ $line-height-default: 1.5em !default;
 //lp-side
 $lp-side-w: 350px !default;
 $lp-side-image-w: 200px;
+$lp-side-shadow: 2px 0px 5px rgba($color-black, .1), 10px 0px 20px rgba($color-black, .05);
 
 //lp-spacements
 $lp-spacement: 100px !default;
 $lp-spacement-b: 15px !default;
+
+//lp-projects
+$lp-box-img-w: 100%;
+$lp-box-img-h: 300px;
+
