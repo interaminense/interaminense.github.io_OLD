@@ -10,3 +10,10 @@
 @mixin text-transform($transform) {
   text-transform: $transform;
 }
+
+//btn colors
+@mixin btn-color($text-color, $bg-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  box-shadow: 3px 3px 10px 0px rgba($bg-color, $btn-opacity-shadow);
+}

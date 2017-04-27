@@ -12,3 +12,8 @@
   border-radius: 50%;
   overflow: hidden;
 }
+
+//transitions
+%transition-default {
+  transition: all $transition-speed ease-in-out;
+}

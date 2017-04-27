@@ -1,0 +1,24 @@
+//Buttons
+//
+
+a {
+  &.btn {
+    text-decoration: none;
+    display: inline-block;
+  }
+}
+
+.btn {
+  padding: $btn-padding;
+  text-transform: uppercase;
+  font-family: $btn-font-family;
+  font-size: $btn-font-size;
+  border-radius: 100px; //always rounded
+  &.btn-default {
+    @include btn-color($color-white, $btn-default-color);
+    @extend %transition-default;
+    &:hover {
+      transform: scale($btn-scale-hover);
+    }
+  }
+}
