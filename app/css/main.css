@@ -14,6 +14,9 @@ body, html, .circle img, .lp .lp__project-img img {
   border-radius: 50%;
   overflow: hidden; }
 
+.header .header__links a, .btn.btn-default {
+  transition: all 0.2s ease-in-out; }
+
 body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
@@ -85,14 +88,65 @@ h6 {
 .text-weight-900 {
   font-weight: 900; }
 
-body, html {
-  margin: 0;
-  padding: 0;
-  color: #4d4d4d; }
+.flex, .header .header__links {
+  display: flex; }
+  .flex.flex--centered, .header .flex--centered.header__links, .flex .flex__centered, .header .header__links .flex__centered {
+    justify-content: center;
+    align-items: center; }
+  .flex.flex--vertical-middle, .header .flex--vertical-middle.header__links {
+    align-items: center; }
+  .flex.flex--space-between, .header .flex--space-between.header__links {
+    justify-content: space-between; }
 
-ul {
-  margin: 0;
-  padding: 0; }
+.header {
+  padding: 0 40px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  height: 68px;
+  font-family: "Roboto", sans-serif; }
+  .header .header__links {
+    list-style-type: none; }
+    .header .header__links li {
+      margin: 0 0 0 30px;
+      font-size: 1.3em; }
+    .header .header__links a {
+      color: #000; }
+      .header .header__links a:hover {
+        color: #2196f3; }
+
+a.btn {
+  text-decoration: none;
+  display: inline-block; }
+
+.btn {
+  padding: 5px 30px;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9em;
+  border-radius: 100px; }
+  .btn.btn-default {
+    background-color: #2196f3;
+    color: #fff;
+    box-shadow: 3px 3px 10px 0px rgba(33, 150, 243, 0.5); }
+    .btn.btn-default:hover {
+      transform: scale(1.05); }
+
+.badge {
+  padding: 4px 6px;
+  border-radius: 5px;
+  font-size: 0.7em;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500; }
+  .badge.badge-default {
+    background-color: #2196f3;
+    color: #fff; }
+  .badge.badge-a {
+    background-color: #8BC34A;
+    color: #fff; }
+  .badge.badge-b {
+    background-color: #673ab7;
+    color: #fff; }
 
 .left-gap, .lp .lp__project-hosted {
   margin-left: 15px !important; }
@@ -118,20 +172,19 @@ ul {
 .no-bottom-gap {
   margin-bottom: 0 !important; }
 
-.badge {
-  padding: 4px 6px;
-  border-radius: 5px;
-  font-size: 0.7em;
-  text-transform: uppercase;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500; }
-  .badge.badge-default {
-    background-color: #2196f3;
-    color: #fff; }
+body, html {
+  margin: 0;
+  padding: 0;
+  color: #4d4d4d; }
+
+ul {
+  margin: 0;
+  padding: 0; }
 
 .lp {
   height: 100%; }
   .lp .lp__side {
+    padding: 100px;
     background-color: #2196f3;
     max-width: 350px;
     box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1), 10px 0px 20px rgba(0, 0, 0, 0.05);
@@ -140,7 +193,6 @@ ul {
   .lp .lp__content {
     font-family: "Roboto Slab", serif; }
   .lp .lp__side, .lp .lp__content {
-    padding: 100px;
     width: 100%;
     overflow-x: hidden;
     overflow-y: auto; }
@@ -149,19 +201,23 @@ ul {
     height: 200px;
     margin: 0 auto 60px auto; }
   .lp .lp__side-blur {
-    background: url(https://avatars.githubusercontent.com/u/12699849);
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     background-size: 100% 100%;
-    filter: blur(40px);
+    filter: blur(25px);
     opacity: .3;
     z-index: -1; }
+  .lp .lp__projects {
+    padding: 0 100px;
+    height: calc(100vh - 68px);
+    overflow-x: hidden;
+    overflow-y: auto; }
   .lp .lp__project {
     list-style-type: none;
-    margin-bottom: 100px; }
+    margin: 50px 0 100px; }
   .lp .lp__project-title {
     font-family: "Roboto", sans-serif; }
   .lp .lp__project-img {
@@ -174,9 +230,3 @@ ul {
       object-fit: cover; }
   .lp .lp__project-tech-list {
     margin-left: 45px; }
-
-.lp-flex {
-  display: flex; }
-  .lp-flex.lp-flex--centered, .lp-flex .lp-flex__centered {
-    justify-content: center;
-    align-items: center; }

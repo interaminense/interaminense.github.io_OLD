@@ -7,20 +7,47 @@ $font-family-secondary: 'Roboto Slab', serif !default;
 $font-size-default: 16px !default;
 $line-height-default: 1.8em !default;
 
+//Header
+$header-padding: 40px;
+$header-shadow: 0px 0px 10px rgba(#000, .2);
+$header-bg-color: $color-white;
+$header-height: 68px;
+$header-font-family: $font-family-primary;
+$header-link-color: $color-black;
+$header-link-color-hover: $primary-color;
+$header-link-spacement: 30px;
+$header-link-font-size: 1.3em;
+
 //Badge
 $badge-padding: 4px 6px;
 $badge-radius: 5px;
 $badge-font-size: .7em;
 $badge-font-family: $font-family-primary;
 $badge-font-weight: 500;
+$badge-color-text-default: $color-white;
+$badge-color-default: $primary-color;
+$badge-color-a: $color-a;
+$badge-color-b: $color-b;
+
+//Buttons
+$btn-padding: 5px 30px;
+$btn-default-color: $primary-color;
+$btn-font-family: $font-family-primary;
+$btn-font-size: .9em;
+$btn-opacity-shadow: .5;
+$btn-scale-hover: 1.05;
+
+//Transitions
+$transition-speed: .2s;
 
 //Variables LP
 //
 
 //lp-side
 $lp-side-w: 350px !default;
-$lp-side-image-w: 200px;
 $lp-side-shadow: 2px 0px 5px rgba($color-black, .1), 10px 0px 20px rgba($color-black, .05);
+$lp-side-image-w: 200px;
+$lp-side-image-shadow: 0px 10px 10px rgba($color-black, .1), 0px 20px 50px rgba($color-black, .3);
 
 //lp-spacements
 $lp-spacement: 100px !default;

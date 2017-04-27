@@ -1,0 +1,23 @@
+//Badges
+//
+
+.badge {
+  padding: $badge-padding;
+  border-radius: $badge-radius;
+  font-size: $badge-font-size;
+  text-transform: uppercase;
+  font-family: $badge-font-family;
+  font-weight: $badge-font-weight;
+  &.badge-default {
+    background-color: $badge-color-default;
+    color: $badge-color-text-default;
+  }
+  &.badge-a {
+    background-color: $badge-color-a;
+    color: $badge-color-text-default;
+  }
+  &.badge-b {
+    background-color: $badge-color-b;
+    color: $badge-color-text-default;
+  }
+}

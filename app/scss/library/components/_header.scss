@@ -1,0 +1,28 @@
+//Header
+//
+
+.header {
+    padding: 0 $header-padding;
+    box-shadow: $header-shadow;
+    background-color: $header-bg-color;
+    height: $header-height;
+    font-family: $header-font-family;
+
+    .header__links {
+        @extend .flex;
+        list-style-type: none;
+
+        li {
+            margin: 0 0 0 $header-link-spacement;
+            font-size: $header-link-font-size;
+        }
+
+        a {
+            color: $header-link-color;
+            @extend %transition-default;
+            &:hover {
+                color: $header-link-color-hover;
+            }
+        }
+    }
+}

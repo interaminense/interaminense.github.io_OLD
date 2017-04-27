@@ -1,4 +1,36 @@
 {
+  "aboutMe": {
+    "title": "Adriano Interaminense",
+    "description": "Hi 😉, Since 2009 I started my professional career as WebDesign and today I am a <b>Front End Developer</b> and <b>Interaction Design</b>.<br><br>I l️o️v️e️ what I do and I always try to be updated with the new technologies, this is a Hobby for me!",
+    "image": "https://avatars.githubusercontent.com/u/12699849"
+  },
+  "socialNetwork": [
+    {
+      "name": "github",
+      "url": "http://github.com/interaminense",
+      "icon": "icon-github"
+    },
+    {
+      "name": "codepen",
+      "url": "http://codepen.io/interaminense",
+      "icon": "icon-codepen"
+    },
+    {
+      "name": "behance",
+      "url": "http://behance.net/imcreator",
+      "icon": "icon-behance"
+    },
+    {
+      "name": "facebook",
+      "url": "http://facebook.com/interaminense",
+      "icon": "icon-facebook"
+    },
+    {
+      "name": "twitter",
+      "url": "http://twitter.com/adinteraminense",
+      "icon": "icon-twitter"
+    }
+  ],
   "projects": [
     {
       "title": "Trump Ipsum",
@@ -36,6 +68,22 @@
       "created": "March 2017",
       "url": "https://beerjs.github.io/recife/",
       "img": "beer-js.jpg"
+    },
+    {
+      "title": "Starry Sky",
+      "subtitle": "The first project on Codepen",
+      "description": "With the goal of creating the first project in codepen, my idea was to recreate a starry sky using javascript and css",
+      "tech": {
+        "description": "",
+        "used": [
+          "Css",
+          "Javascript"
+        ]
+      },
+      "hosted": "codepen",
+      "created": "December 2015",
+      "url": "http://codepen.io/interaminense/full/QyGbXL/",
+      "img": "starry-sky.jpg"
     }
   ]
 }

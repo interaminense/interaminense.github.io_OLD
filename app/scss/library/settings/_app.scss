@@ -20,33 +20,6 @@ ul {
   padding: 0;
 }
 
-//gaps
-
-.left-gap { margin-left: $lp-spacement-b !important; }
-.right-gap { margin-right: $lp-spacement-b !important; }
-.top-gap { margin-top: $lp-spacement-b !important; }
-.bottom-gap { margin-bottom: $lp-spacement-b !important; }
-
-.no-left-gap { margin-left: 0 !important; }
-.no-right-gap { margin-right: 0 !important; }
-.no-top-gap { margin-top: 0 !important; }
-.no-bottom-gap { margin-bottom: 0 !important; }
-
-//badges
-
-.badge {
-  padding: $badge-padding;
-  border-radius: $badge-radius;
-  font-size: $badge-font-size;
-  text-transform: uppercase;
-  font-family: $badge-font-family;
-  font-weight: $badge-font-weight;
-  &.badge-default {
-    background-color: $primary-color;
-    color: $color-white;
-  }
-}
-
 //
 //App
 //'lp' required prefix in all classes
@@ -56,6 +29,7 @@ ul {
   height: 100%;
 
   .lp__side {
+    padding: $lp-spacement;
     background-color: $primary-color;
     max-width: $lp-side-w;
     box-shadow: $lp-side-shadow;
@@ -66,7 +40,7 @@ ul {
     font-family: $font-family-secondary;
   }
   .lp__side, .lp__content {
-    padding: $lp-spacement;
+
     width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
@@ -79,22 +53,27 @@ ul {
     margin: 0 auto #{$lp-spacement-b * 4} auto;
   }
   .lp__side-blur {
-    background: url(https://avatars.githubusercontent.com/u/12699849);
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     background-size: 100% 100%;
-    filter: blur(40px);
+    filter: blur(25px);
     opacity: .3;
     z-index: -1;
   }
 
   //projects
+  .lp__projects {
+    padding: 0 $lp-spacement;
+    height: calc(100vh - #{$header-height});
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
   .lp__project {
     list-style-type: none;
-    margin-bottom: $lp-spacement;
+    margin: ($lp-spacement / 2) 0 $lp-spacement;
   }
   .lp__project-hosted {
       @extend .left-gap;
@@ -123,15 +102,5 @@ ul {
   .lp__project-tech-list {
     margin-left: $lp-spacement-b * 3;
     @extend .bottom-gap;
-  }
-}
-
-//classes flexbox
-.lp-flex {
-  display: flex;
-
-  &.lp-flex--centered, .lp-flex__centered {
-    justify-content: center;
-    align-items: center;
   }
 }

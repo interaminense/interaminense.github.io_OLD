@@ -2,10 +2,14 @@
 
   'use strict';
 
-  const url = 'js/data.json';
-  const ul = document.getElementById('projects');
+  const url = 'js/data.json',
 
-  const createNode = function(element) {
+  _idProjects = document.getElementById('projects'),
+  _idSocialNetwork = document.getElementById('socialNetwork'),
+  _idAboutMe = document.getElementById('aboutMe'),
+  _idBlur = document.getElementById('blur'),
+
+  createNode = function(element) {
     return document.createElement(element);
   },
   append = function(parent, el) {
@@ -16,20 +20,37 @@
   },
   removeClass = function(el, classname) {
     return el.classList.remove(classname);
+  },
+  getColorBadge = function(el) {
+    let classname;
+    switch (el) {
+      case 'github':
+        classname = 'badge-a';
+        break;
+      case 'codepen':
+        classname = 'badge-b';
+        break;
+      default:
+        classname = 'badge-default';
+        break;
+    }
+
+    return classname;
   }
 
-  fetch(url).then(function(response) { 
+  fetch(url).then(function(response) {
     return response.json();
   }).then(function(data) {
 
     //print data
-    console.log(data);
+    console.log("data", data);
 
-    let projects = data.projects;
-    return projects.map(function(project){
+    //Projects
+    let _projects = data.projects;
+    _projects.map(function(project){
 
       let li = createNode('li'),
-          title = createNode('h3'),
+          title = createNode('h1'),
           subtitle = createNode('h5'),
           boxDescription = createNode('div'),
           description = createNode('p'),
@@ -53,7 +74,7 @@
       hosted.innerHTML = 'hosted on ' + project.hosted;
       addClass(hosted, 'lp__project-hosted');
       addClass(hosted, 'badge');
-      addClass(hosted, 'badge-default');
+      addClass(hosted, getColorBadge(project.hosted));
       append(created, hosted);
 
       //title
@@ -103,10 +124,63 @@
       url.innerHTML = 'visit the website';
       url.target = '_blank';
       addClass(url, 'lp__project-url');
-
+      addClass(url, 'btn');
+      addClass(url, 'btn-default');
       append(li, url);
-      append(ul, li);
+
+      //append li inside projects
+      append(_idProjects, li);
     })
+
+    //Social Networks
+    let _social = data.socialNetwork;
+    _social.map(function(social){
+
+      let li = createNode('li'),
+          url = createNode('a'),
+          icon = createNode('span');
+
+      //url
+      url.href = social.url;
+      url.target = '_blank';
+      url.title = 'go to my ' + social.name;
+      append(li, url);
+
+      //icon
+      addClass(icon, social.icon);
+      append(url, icon);
+
+      //append li inside header__links
+      append(_idSocialNetwork, li);
+
+    })
+
+    //About Me
+    let aboutMe = data.aboutMe,
+        aboutTitle = createNode('h6'),
+        aboutBoxImage = createNode('div'),
+        aboutImage = createNode('img'),
+        aboutDescription = createNode('p');
+
+    append(_idAboutMe, aboutBoxImage);
+    addClass(aboutBoxImage, 'lp__side-image');
+    addClass(aboutBoxImage, 'circle');
+
+    aboutImage.src = aboutMe.image;
+    append(aboutBoxImage, aboutImage);
+
+    aboutTitle.innerHTML = aboutMe.title;
+    addClass(aboutTitle, 'text-center');
+    addClass(aboutTitle, 'text-uppercase');
+    addClass(aboutTitle, 'text-weight-500');
+    append(_idAboutMe, aboutTitle);
+
+    aboutDescription.innerHTML = aboutMe.description;
+    append(_idAboutMe, aboutDescription);
+
+    //blur
+    _idBlur.style.backgroundImage = 'url('+aboutMe.image+')';
+
   });
 
 })();

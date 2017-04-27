@@ -1,0 +1,17 @@
+//Flexbox
+//
+
+.flex {
+  display: flex;
+
+  &.flex--centered, .flex__centered {
+    justify-content: center;
+    align-items: center;
+  }
+  &.flex--vertical-middle {
+      align-items: center;
+  }
+  &.flex--space-between {
+    justify-content: space-between;
+  }
+}
