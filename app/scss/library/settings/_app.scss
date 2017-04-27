@@ -4,6 +4,7 @@
 body, html {
   margin: 0;
   padding: 0;
+  color: lighten($color-black, 30%);
   @extend %size-full;
 }
 
@@ -12,6 +13,11 @@ body, html {
   img {
     @extend %size-full;
   }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
 }
 
 //gaps
@@ -26,6 +32,21 @@ body, html {
 .no-top-gap { margin-top: 0 !important; }
 .no-bottom-gap { margin-bottom: 0 !important; }
 
+//badges
+
+.badge {
+  padding: $badge-padding;
+  border-radius: $badge-radius;
+  font-size: $badge-font-size;
+  text-transform: uppercase;
+  font-family: $badge-font-family;
+  font-weight: $badge-font-weight;
+  &.badge-default {
+    background-color: $primary-color;
+    color: $color-white;
+  }
+}
+
 //
 //App
 //'lp' required prefix in all classes
@@ -37,6 +58,9 @@ body, html {
   .lp__side {
     background-color: $primary-color;
     max-width: $lp-side-w;
+    box-shadow: $lp-side-shadow;
+    position: relative;
+    z-index: 1;
   }
   .lp__content {
     font-family: $font-family-secondary;
@@ -44,6 +68,8 @@ body, html {
   .lp__side, .lp__content {
     padding: $lp-spacement;
     width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
   //side only
@@ -51,6 +77,52 @@ body, html {
     width: $lp-side-image-w;
     height: $lp-side-image-w;
     margin: 0 auto #{$lp-spacement-b * 4} auto;
+  }
+  .lp__side-blur {
+    background: url(https://avatars.githubusercontent.com/u/12699849);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    filter: blur(40px);
+    opacity: .3;
+    z-index: -1;
+  }
+
+  //projects
+  .lp__project {
+    list-style-type: none;
+    margin-bottom: $lp-spacement;
+  }
+  .lp__project-hosted {
+      @extend .left-gap;
+  }
+  .lp__project-title {
+    font-family: $font-family-primary;
+    @extend .text-weight-500;
+    @extend .text-uppercase;
+  }
+  .lp__project-subtitle {
+    @extend .text-weight-300;
+    @extend .no-top-gap;
+  }
+  .lp__project-img {
+    width: calc(#{$lp-box-img-w} + #{$lp-spacement * 2});
+    height: $lp-box-img-h;
+    overflow: hidden;
+    margin-left: -#{$lp-spacement};
+    margin-right: -#{$lp-spacement};
+
+    img {
+      @extend %size-full;
+      object-fit: cover;
+    }
+  }
+  .lp__project-tech-list {
+    margin-left: $lp-spacement-b * 3;
+    @extend .bottom-gap;
   }
 }
 
