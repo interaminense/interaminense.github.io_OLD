@@ -21,6 +21,11 @@
       "icon": "icon-behance"
     },
     {
+      "name": "linkedin",
+      "url": "http://linkedin.com/interaminense",
+      "icon": "icon-linkedin"
+    },
+    {
       "name": "facebook",
       "url": "http://facebook.com/interaminense",
       "icon": "icon-facebook"
