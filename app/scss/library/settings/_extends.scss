@@ -15,5 +15,5 @@
 
 //transitions
 %transition-default {
-  transition: all $transition-speed ease-in-out;
+  transition: all $transition-speed linear;
 }

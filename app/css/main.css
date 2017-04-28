@@ -14,8 +14,8 @@ body, html, .circle img, .lp .lp__project-img img {
   border-radius: 50%;
   overflow: hidden; }
 
-.header .header__links a, .btn.btn-default {
-  transition: all 0.2s ease-in-out; }
+.header .header__links a, .btn.btn-default, .btn.btn-lighten {
+  transition: all 0.1s linear; }
 
 body {
   font-family: "Roboto", sans-serif;
@@ -117,19 +117,27 @@ h6 {
 a.btn {
   text-decoration: none;
   display: inline-block; }
+  a.btn:hover {
+    text-decoration: none; }
 
 .btn {
   padding: 5px 30px;
   text-transform: uppercase;
   font-family: "Roboto", sans-serif;
-  font-size: 0.9em;
+  font-size: 0.8em;
   border-radius: 100px; }
+  .btn:hover {
+    transform: scale(1.05); }
   .btn.btn-default {
     background-color: #2196f3;
     color: #fff;
     box-shadow: 3px 3px 10px 0px rgba(33, 150, 243, 0.5); }
-    .btn.btn-default:hover {
-      transform: scale(1.05); }
+  .btn.btn-lighten {
+    background-color: #fff;
+    color: #000;
+    box-shadow: 3px 3px 10px 0px rgba(255, 255, 255, 0.5); }
+  .btn.btn-whitout-shadow {
+    box-shadow: none; }
 
 .badge {
   padding: 4px 6px;
@@ -181,6 +189,12 @@ ul {
   margin: 0;
   padding: 0; }
 
+a {
+  color: #2196f3;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+
 .lp {
   height: 100%; }
   .lp .lp__side {
@@ -197,8 +211,8 @@ ul {
     overflow-x: hidden;
     overflow-y: auto; }
   .lp .lp__side-image {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     margin: 0 auto 60px auto; }
   .lp .lp__side-blur {
     position: absolute;
@@ -217,7 +231,30 @@ ul {
     overflow-y: auto; }
   .lp .lp__project {
     list-style-type: none;
-    margin: 50px 0 100px; }
+    margin: 50px 0 100px;
+    position: relative; }
+    .lp .lp__project:last-child:after, .lp .lp__project:last-child:before {
+      display: none; }
+    .lp .lp__project:after, .lp .lp__project:before {
+      content: "";
+      position: absolute; }
+    .lp .lp__project:after {
+      width: 10px;
+      height: 10px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      background: white;
+      bottom: -54px;
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px #e4e4e4; }
+    .lp .lp__project:before {
+      content: "";
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #e4e4e4, transparent);
+      bottom: -50px;
+      left: 0; }
   .lp .lp__project-title {
     font-family: "Roboto", sans-serif; }
   .lp .lp__project-img {

@@ -5,6 +5,9 @@ a {
   &.btn {
     text-decoration: none;
     display: inline-block;
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
 
@@ -14,11 +17,18 @@ a {
   font-family: $btn-font-family;
   font-size: $btn-font-size;
   border-radius: 100px; //always rounded
+  &:hover {
+    transform: scale($btn-scale-hover);
+  }
   &.btn-default {
     @include btn-color($color-white, $btn-default-color);
     @extend %transition-default;
-    &:hover {
-      transform: scale($btn-scale-hover);
-    }
+  }
+  &.btn-lighten {
+    @include btn-color($color-black, $btn-lighten-color);
+    @extend %transition-default;
+  }
+  &.btn-whitout-shadow {
+    box-shadow: none;
   }
 }
