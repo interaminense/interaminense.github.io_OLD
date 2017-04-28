@@ -5,35 +5,39 @@
     <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/styles.min.css">
+    <link href="fonts/css/fontello.css" rel="stylesheet">
+    <!--build:css css/styles.min.css-->
+    <link rel="stylesheet" href="css/main.css">
+    <!--endbuild-->
 </head>
 
 <body>
 
-    <div class="lp lp-flex">
-        <div class="lp__side lp-flex lp-flex--centered text-white">
+    <div class="lp flex">
+        <div class="lp__side flex flex--centered text-white">
+            <div id="blur" class="lp__side-blur"></div>
             <div>
-                <div class="lp__side-image circle">
-                    <img src="https://avatars.githubusercontent.com/u/12699849" alt="">
+                <div id="aboutMe"></div>
+                <br>
+                <div class="text-right">
+                    <a href="" class="text-white">
+                        <span class="iconfont icon-download"></span> download my resume
+                    </a>
                 </div>
-                <p>
-                    Hi 😉, I'm <strong class="text-uppercase">Adriano Interaminense</strong>!
-                    <br>
-                    Since 2009 I started my professional career as WebDesign and today I am a Front End Developer and Interaction Design.
-                    <br>
-                    I l️o️v️e️ what I do and I always try to be updated with the new technologies, this is a Hobby for me! 
-                    <br><br>
-                    Get to know my work through social networks
-                </p>
             </div>
         </div>
         <div class="lp__content">
-            <h1>Authors</h1>
-  <ul id="authors"></ul>
+            <header class="header flex flex--vertical-middle flex--space-between">
+                <strong>My Projects</strong>
+                <ul id="socialNetwork" class="header__links"></ul>
+            </header>
+            <ul class="lp__projects" id="projects"></ul>
         </div>
     </div>
 
-    <script src="js/main.min.js"></script>
+    <!--build:js js/main.min.js -->
+    <script src="js/main.js"></script>
+    <!-- endbuild -->
 </body>
 
 </html>
