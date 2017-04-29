@@ -2,7 +2,7 @@
 
   'use strict';
 
-  const url = 'js/data.json',
+  const url = 'src/js/data.json',
 
   _idProjects = document.getElementById('projects'),
   _idSocialNetwork = document.getElementById('socialNetwork'),
@@ -93,7 +93,7 @@
       append(li, boxImg);
 
       //img
-      img.src = 'imgs/' + project.img;
+      img.src = 'src/imgs/' + project.img;
       append(boxImg, img);
 
       //box description
