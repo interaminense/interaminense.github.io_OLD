@@ -8,6 +8,8 @@
   text-transform: uppercase;
   font-family: $badge-font-family;
   font-weight: $badge-font-weight;
+  display: inline-block;
+  line-height: $badge-line-height;
   &.badge-default {
     background-color: $badge-color-default;
     color: $badge-color-text-default;

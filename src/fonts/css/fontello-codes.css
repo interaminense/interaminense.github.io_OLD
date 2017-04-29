@@ -1,7 +1,9 @@
 
 .icon-download:before { content: '\e800'; } /* '' */
+.icon-cancel:before { content: '\e801'; } /* '' */
 .icon-twitter:before { content: '\f099'; } /* '' */
 .icon-facebook:before { content: '\f09a'; } /* '' */
+.icon-menu:before { content: '\f0c9'; } /* '' */
 .icon-linkedin:before { content: '\f0e1'; } /* '' */
 .icon-github:before { content: '\f113'; } /* '' */
 .icon-behance:before { content: '\f1b4'; } /* '' */

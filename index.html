@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#2196f3" />
+    <title>Adriano Interaminense</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="src/fonts/css/fontello.css" rel="stylesheet">
@@ -12,7 +14,8 @@
 <body>
 
     <div class="lp flex">
-        <div class="lp__side flex flex--centered text-white">
+        <div id="side" class="lp__side text-white">
+            <span id="closeMenu" class="icon-cancel lp__btn-menu text-white"></span>
             <div id="blur" class="lp__side-blur"></div>
             <div>
                 <div id="aboutMe"></div>
@@ -26,7 +29,9 @@
         </div>
         <div class="lp__content">
             <header class="header flex flex--vertical-middle flex--space-between">
-                <strong>My Projects</strong>
+                <div class="header__title">
+                    <strong><span id="openMenu" class="icon-menu header__btn-menu right-gap"></span> My Projects</strong>
+                </div>
                 <ul id="socialNetwork" class="header__links"></ul>
             </header>
             <ul class="lp__projects" id="projects"></ul>

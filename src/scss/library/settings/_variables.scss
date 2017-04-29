@@ -17,9 +17,10 @@ $header-link-color: $color-black;
 $header-link-color-hover: $primary-color;
 $header-link-spacement: 30px;
 $header-link-font-size: 1.3em;
+$header-title-min-w: 150px;
 
 //Badge
-$badge-padding: 4px 6px;
+$badge-padding: 4px 10px;
 $badge-radius: 5px;
 $badge-font-size: .7em;
 $badge-font-family: $font-family-primary;
@@ -28,6 +29,7 @@ $badge-color-text-default: $color-white;
 $badge-color-default: $primary-color;
 $badge-color-a: $color-a;
 $badge-color-b: $color-b;
+$badge-line-height: 15px;
 
 //Buttons
 $btn-padding: 5px 30px;

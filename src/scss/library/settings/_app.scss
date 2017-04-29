@@ -44,6 +44,7 @@ a {
     box-shadow: $lp-side-shadow;
     position: relative;
     z-index: 1;
+    @extend %transition-menu;
   }
   .lp__content {
     font-family: $font-family-secondary;
@@ -52,6 +53,13 @@ a {
     width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
+  }
+
+  .lp__btn-menu {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    display: none;
   }
 
   //side only
@@ -113,9 +121,6 @@ a {
       bottom: -50px;
       left: 0;
     }
-  }
-  .lp__project-hosted {
-      @extend .left-gap;
   }
   .lp__project-title {
     font-family: $font-family-primary;

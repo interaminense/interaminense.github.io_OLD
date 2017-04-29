@@ -17,3 +17,7 @@
 %transition-default {
   transition: all $transition-speed linear;
 }
+
+%transition-menu {
+  transition: all #{$transition-speed * 3} ease-out;
+}

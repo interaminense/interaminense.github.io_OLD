@@ -8,6 +8,8 @@
   _idSocialNetwork = document.getElementById('socialNetwork'),
   _idAboutMe = document.getElementById('aboutMe'),
   _idBlur = document.getElementById('blur'),
+  _idOpenMenu = document.getElementById('openMenu'),
+  _idCloseMenu = document.getElementById('closeMenu'),
 
   createNode = function(element) {
     return document.createElement(element);
@@ -36,6 +38,11 @@
     }
 
     return classname;
+  },
+  action = function(event, item, _function) {
+    item.addEventListener(event, function() {
+      _function();
+    });
   }
 
   fetch(url).then(function(response) {
@@ -58,6 +65,7 @@
           techUl = createNode('ul'),
           hosted = createNode('span'),
           created = createNode('div'),
+          spanCreated = createNode('span'),
           url = createNode('a'),
           boxImg = createNode('div'),
           img = createNode('img');
@@ -66,9 +74,13 @@
       addClass(li, 'lp__project');
 
       //created
-      created.innerHTML = 'created on ' + project.created;
       addClass(created, 'lp__project-created');
       append(li, created);
+
+      //sapn created
+      spanCreated.innerHTML = 'created on ' + project.created;
+      addClass(spanCreated, 'right-gap');
+      append(created, spanCreated);
 
       //hosted
       hosted.innerHTML = 'hosted on ' + project.hosted;
@@ -181,6 +193,14 @@
     //blur
     _idBlur.style.backgroundImage = 'url('+aboutMe.image+')';
 
+  });
+
+  //click to open menu on mobile devices
+  action('click', _idOpenMenu, function(){
+    let side = document.getElementById('side').classList.add('lp__side--is-open');
+  });
+  action('click', _idCloseMenu, function(){
+    let side = document.getElementById('side').classList.remove('lp__side--is-open');
   });
 
 })();

@@ -17,34 +17,31 @@ body, html, .circle img, .lp .lp__project-img img {
 .header .header__links a, .btn.btn-default, .btn.btn-lighten {
   transition: all 0.1s linear; }
 
+.lp .lp__side {
+  transition: all 0.3s ease-out; }
+
 body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   line-height: 1.8em; }
 
 h1 {
-  font-size: 35.2px;
-  line-height: 1.08em; }
+  font-size: 35.2px; }
 
 h2 {
-  font-size: 32px;
-  line-height: 0.9em; }
+  font-size: 32px; }
 
 h3 {
-  font-size: 28.8px;
-  line-height: 0.72em; }
+  font-size: 28.8px; }
 
 h4 {
-  font-size: 25.6px;
-  line-height: 0.54em; }
+  font-size: 25.6px; }
 
 h5 {
-  font-size: 22.4px;
-  line-height: 0.36em; }
+  font-size: 22.4px; }
 
 h6 {
-  font-size: 19.2px;
-  line-height: 0.18em; }
+  font-size: 19.2px; }
 
 .text-center {
   text-align: center; }
@@ -93,7 +90,7 @@ h6 {
   .flex.flex--centered, .header .flex--centered.header__links, .flex .flex__centered, .header .header__links .flex__centered {
     justify-content: center;
     align-items: center; }
-  .flex.flex--vertical-middle, .header .flex--vertical-middle.header__links {
+  .flex.flex--vertical-middle, .header .header__links {
     align-items: center; }
   .flex.flex--space-between, .header .flex--space-between.header__links {
     justify-content: space-between; }
@@ -104,8 +101,12 @@ h6 {
   background-color: #fff;
   height: 68px;
   font-family: "Roboto", sans-serif; }
+  .header .header__title {
+    min-width: 150px; }
   .header .header__links {
-    list-style-type: none; }
+    list-style-type: none;
+    overflow-x: auto;
+    height: inherit; }
     .header .header__links li {
       margin: 0 0 0 30px;
       font-size: 1.3em; }
@@ -113,6 +114,8 @@ h6 {
       color: #000; }
       .header .header__links a:hover {
         color: #2196f3; }
+  .header .header__btn-menu {
+    display: none; }
 
 a.btn {
   text-decoration: none;
@@ -140,12 +143,14 @@ a.btn {
     box-shadow: none; }
 
 .badge {
-  padding: 4px 6px;
+  padding: 4px 10px;
   border-radius: 5px;
   font-size: 0.7em;
   text-transform: uppercase;
   font-family: "Roboto", sans-serif;
-  font-weight: 500; }
+  font-weight: 500;
+  display: inline-block;
+  line-height: 15px; }
   .badge.badge-default {
     background-color: #2196f3;
     color: #fff; }
@@ -156,7 +161,7 @@ a.btn {
     background-color: #673ab7;
     color: #fff; }
 
-.left-gap, .lp .lp__project-hosted {
+.left-gap {
   margin-left: 15px !important; }
 
 .right-gap {
@@ -210,6 +215,11 @@ a {
     width: 100%;
     overflow-x: hidden;
     overflow-y: auto; }
+  .lp .lp__btn-menu {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    display: none; }
   .lp .lp__side-image {
     width: 150px;
     height: 150px;
@@ -267,3 +277,27 @@ a {
       object-fit: cover; }
   .lp .lp__project-tech-list {
     margin-left: 45px; }
+
+@media screen and (max-width: 1024px) {
+  .lp .lp__side {
+    max-width: 200px; } }
+
+@media screen and (max-width: 768px) {
+  .lp .lp__side {
+    max-width: none;
+    width: calc(100% - 100px);
+    position: absolute;
+    height: 100%;
+    transform: translateX(-100%);
+    padding: 50px; }
+    .lp .lp__side.lp__side--is-open {
+      transform: translateX(0%); }
+  .lp .lp__projects {
+    padding: 0 50px; }
+  .lp .lp__btn-menu {
+    display: block; }
+  .header .header__btn-menu {
+    display: inline-block; }
+  .header .header__links {
+    margin-right: -40px;
+    box-shadow: -27px 0px 40px -30px #2196f3 inset; } }

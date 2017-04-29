@@ -1,0 +1,46 @@
+//Responsive
+//
+
+@media screen and (max-width: 1024px) {
+  .lp {
+    .lp__side {
+      max-width: 200px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .lp {
+    .lp__side {
+      max-width: none;
+      width: calc(100% - 100px);
+      position: absolute;
+      height: 100%;
+      transform: translateX(-100%);
+      padding: 50px;
+      &.lp__side--is-open {
+        transform: translateX(0%);
+      }
+    }
+    .lp__projects {
+      padding: 0 50px;
+    }
+    .lp__btn-menu {
+      display: block;
+    }
+  }
+
+  .header {
+    .header__btn-menu {
+      display: inline-block;
+    }
+    .header__links {
+      margin-right: -#{$header-padding};
+      box-shadow: -27px 0px 40px -30px $primary-color inset;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+
+}
