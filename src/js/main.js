@@ -78,7 +78,7 @@
       append(li, created);
 
       //sapn created
-      spanCreated.innerHTML = 'created on ' + project.created;
+      spanCreated.innerHTML = 'created in ' + project.created;
       addClass(spanCreated, 'right-gap');
       append(created, spanCreated);
 
