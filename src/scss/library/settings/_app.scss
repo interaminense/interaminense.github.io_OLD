@@ -43,7 +43,7 @@ a {
     max-width: $lp-side-w;
     box-shadow: $lp-side-shadow;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     @extend %transition-menu;
   }
   .lp__content {
@@ -137,6 +137,11 @@ a {
     overflow: hidden;
     margin-left: -#{$lp-spacement};
     margin-right: -#{$lp-spacement};
+    transition: $lp-transition-img-project;
+    
+    &:hover {
+      height: $lp-box-img-h + 150px;
+    }
 
     img {
       @extend %size-full;

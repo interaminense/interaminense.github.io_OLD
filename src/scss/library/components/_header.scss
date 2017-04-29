@@ -2,11 +2,13 @@
 //
 
 .header {
+    position: relative;
     padding: 0 $header-padding;
     box-shadow: $header-shadow;
     background-color: $header-bg-color;
     height: $header-height;
     font-family: $header-font-family;
+    z-index: 1;
 
     .header__title {
         min-width: $header-title-min-w;
