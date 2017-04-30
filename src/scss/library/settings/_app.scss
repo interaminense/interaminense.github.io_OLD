@@ -5,6 +5,7 @@ body, html {
   margin: 0;
   padding: 0;
   color: lighten($color-black, 30%);
+  overflow: hidden;
   @extend %size-full;
 }
 
@@ -38,7 +39,7 @@ a {
   height: 100%;
 
   .lp__side {
-    padding: $lp-spacement;
+    padding: 0 $lp-spacement;
     background-color: $primary-color;
     max-width: $lp-side-w;
     box-shadow: $lp-side-shadow;
@@ -50,9 +51,7 @@ a {
     font-family: $font-family-secondary;
   }
   .lp__side, .lp__content {
-    width: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
+    @extend %size-full;
   }
 
   .lp__btn-menu {
@@ -80,6 +79,15 @@ a {
     z-index: -1;
   }
 
+  //about me
+  .lp__about-me {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100% - #{$lp-about-me-spacement * 2});
+    padding: 0 $lp-about-me-spacement;
+    margin: $lp-about-me-spacement 0;
+  }
+
   //projects
   .lp__projects {
     padding: 0 $lp-spacement;
@@ -89,7 +97,8 @@ a {
   }
   .lp__project {
     list-style-type: none;
-    margin: ($lp-spacement / 2) 0 $lp-spacement;
+    padding-bottom: $lp-spacement * 2;
+    margin: $lp-spacement 0 #{$lp-spacement * 2};
     position: relative;
     
     &:last-child {
@@ -109,7 +118,7 @@ a {
       right: 0;
       margin: auto;
       background: white;
-      bottom: -54px;
+      bottom: -4px;
       border-radius: 50%;
       box-shadow: 0 0 0 3px #e4e4e4;
     }
@@ -118,7 +127,7 @@ a {
       width: 100%;
       height: 2px;
       background: linear-gradient(90deg, transparent, #e4e4e4, transparent);
-      bottom: -50px;
+      bottom: 0px;
       left: 0;
     }
   }
@@ -151,5 +160,51 @@ a {
   .lp__project-tech-list {
     margin-left: $lp-spacement-b * 3;
     @extend .bottom-gap;
+  }
+
+  //pagination
+  .lp__pagination {
+    position: absolute;
+    right: 0;
+    top: 0;
+    list-style-type: none;
+    height: inherit;
+    background: rgba(0, 0, 0, .02);
+    @extend %transition-default;
+    &:hover {
+      .lp__pagination-item:not(.lp__pagination-item--is-active) {
+        a {
+          opacity: .8;
+        }
+      }
+    }
+  }
+  .lp__pagination-item {
+    @extend .text-center;
+    @extend %transition-default;
+    &:not(.lp__pagination-item--is-active) {
+      a {
+        background: transparent;
+        &:hover {
+          background: linear-gradient(45deg, rgba(0, 0, 0, .05), transparent);
+        }
+      }
+    }
+    &.lp__pagination-item--is-active {
+      a, a:hover {
+        cursor: default;
+        opacity: 1;
+      }
+    }
+    a {
+      padding: 5px 15px;
+      display: block;
+      color: #fff;
+      font-size: .8em;
+      font-weight: 900;
+      text-decoration: none;
+      opacity: .2;
+      @extend %transition-default;
+    }
   }
 }
