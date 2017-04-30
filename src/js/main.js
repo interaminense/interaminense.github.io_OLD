@@ -10,6 +10,9 @@
   _idBlur = document.getElementById('blur'),
   _idOpenMenu = document.getElementById('openMenu'),
   _idCloseMenu = document.getElementById('closeMenu'),
+  _idPagination = document.getElementById('pagination'),
+
+  colors = ['a', 'b', 'c', 'd', 'e'],
 
   createNode = function(element) {
     return document.createElement(element);
@@ -39,10 +42,25 @@
 
     return classname;
   },
-  action = function(event, item, _function) {
-    item.addEventListener(event, function() {
-      _function();
-    });
+  generateId = function(phrase) {
+    let arrayString = phrase.split(" "),
+        unifiedPhrase = "";
+    arrayString.map(function(string){
+      unifiedPhrase = unifiedPhrase + string;
+    })
+    return unifiedPhrase.toLowerCase();
+  },
+  isItemActive = function(item) {
+    let flag = false;
+    if(item.getBoundingClientRect().top < 69 && item.getBoundingClientRect().bottom > 69) {
+      flag = true;
+    }else {
+      flag = false;
+    }
+    return flag;
+  },
+  getRandomArbitrary = function(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
   }
 
   fetch(url).then(function(response) {
@@ -68,9 +86,33 @@
           spanCreated = createNode('span'),
           url = createNode('a'),
           boxImg = createNode('div'),
-          img = createNode('img');
+          img = createNode('img'),
+          paginationLi = createNode('li'),
+          paginationLink = createNode('a');
+
+      //pagination
+      addClass(paginationLi, 'lp__pagination-item');
+
+      //background pagination li
+      let colorLi = 'bg-color-' + colors[getRandomArbitrary(0, 4)];
+      addClass(paginationLink, colorLi);
+
+      paginationLink.innerHTML = project.title.charAt(0);
+      paginationLink.href = '#' + generateId(project.title);
+      paginationLink.title = project.title;
+      append(paginationLi, paginationLink);
+      append(_idPagination, paginationLi);
+
+      //pagination iteration
+      paginationLink.addEventListener('click', function(){
+        document.querySelectorAll('.lp__pagination-item').forEach(function(el) {
+          removeClass(el, 'lp__pagination-item--is-active');
+        })
+        addClass(paginationLi, 'lp__pagination-item--is-active');
+      })
 
       //li
+      li.id = generateId(project.title);
       addClass(li, 'lp__project');
 
       //created
@@ -140,8 +182,18 @@
       addClass(url, 'btn-default');
       append(li, url);
 
+      //test
+      _idProjects.addEventListener('scroll', function(){
+        if(isItemActive(li)) {
+          addClass(paginationLi, 'lp__pagination-item--is-active')
+        }else {
+          removeClass(paginationLi, 'lp__pagination-item--is-active')
+        }
+      })
+
       //append li inside projects
       append(_idProjects, li);
+
     })
 
     //Social Networks
@@ -169,7 +221,7 @@
 
     //About Me
     let aboutMe = data.aboutMe,
-        aboutTitle = createNode('h6'),
+        aboutTitle = createNode('h4'),
         aboutBoxImage = createNode('div'),
         aboutImage = createNode('img'),
         aboutDescription = createNode('p');
@@ -185,6 +237,7 @@
     addClass(aboutTitle, 'text-center');
     addClass(aboutTitle, 'text-uppercase');
     addClass(aboutTitle, 'text-weight-500');
+    addClass(aboutTitle, 'no-gap');
     append(_idAboutMe, aboutTitle);
 
     aboutDescription.innerHTML = aboutMe.description;
@@ -196,11 +249,11 @@
   });
 
   //click to open menu on mobile devices
-  action('click', _idOpenMenu, function(){
+  _idOpenMenu.addEventListener('click', function(){
     let side = document.getElementById('side').classList.add('lp__side--is-open');
-  });
-  action('click', _idCloseMenu, function(){
+  })
+  _idCloseMenu.addEventListener('click', function(){
     let side = document.getElementById('side').classList.remove('lp__side--is-open');
-  });
+  })
 
 })();
