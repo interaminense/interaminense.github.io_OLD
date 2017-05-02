@@ -256,6 +256,7 @@ a {
     max-width: 500px;
     box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1), 10px 0px 20px rgba(0, 0, 0, 0.05);
     position: relative;
+    overflow: hidden;
     z-index: 2; }
   .lp .lp__content {
     font-family: "Roboto Slab", serif; }
@@ -275,7 +276,7 @@ a {
     width: 100%;
     height: 100%;
     background-size: 100% 100%;
-    filter: blur(25px);
+    filter: blur(25px) grayscale(100%);
     opacity: .3;
     z-index: -1; }
   .lp .lp__about-me {
@@ -284,6 +285,10 @@ a {
     height: calc(100% - 100px);
     padding: 0 50px;
     margin: 50px 0; }
+    .lp .lp__about-me.scroll::-webkit-scrollbar-thumb {
+      visibility: hidden; }
+    .lp .lp__about-me.scroll:hover::-webkit-scrollbar-thumb {
+      visibility: visible; }
   .lp .lp__projects {
     padding: 0 41px;
     height: calc(100vh - 68px);

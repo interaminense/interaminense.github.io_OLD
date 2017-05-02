@@ -24,7 +24,7 @@ ul {
 a {
   color: $link-color;
   text-decoration: none;
-  
+
   &:hover {
     text-decoration: underline;
   }
@@ -44,6 +44,7 @@ a {
     max-width: $lp-side-w;
     box-shadow: $lp-side-shadow;
     position: relative;
+    overflow: hidden;
     z-index: 2;
     @extend %transition-menu;
   }
@@ -74,7 +75,7 @@ a {
     width: 100%;
     height: 100%;
     background-size: 100% 100%;
-    filter: blur(25px);
+    filter: blur(25px) grayscale(100%);
     opacity: .3;
     z-index: -1;
   }
@@ -86,6 +87,18 @@ a {
     height: calc(100% - #{$lp-about-me-spacement * 2});
     padding: 0 $lp-about-me-spacement;
     margin: $lp-about-me-spacement 0;
+
+    //custom scrollbar inside aboutme
+    &.scroll {
+      &::-webkit-scrollbar-thumb {
+        visibility: hidden;
+      }
+      &:hover {
+        &::-webkit-scrollbar-thumb {
+          visibility: visible;
+        }
+      }
+    }
   }
 
   //projects
@@ -100,7 +113,7 @@ a {
     padding-bottom: $lp-spacement * 2;
     margin: $lp-spacement 0 #{$lp-spacement * 2};
     position: relative;
-    
+
     &:last-child {
       &:after, &:before {
         display: none;
@@ -147,7 +160,7 @@ a {
     margin-left: -#{$lp-spacement};
     margin-right: -#{$lp-spacement};
     transition: $lp-transition-img-project;
-    
+
     &:hover {
       height: $lp-box-img-h + 150px;
     }
