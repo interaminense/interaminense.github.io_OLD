@@ -45,7 +45,7 @@ a {
     box-shadow: $lp-side-shadow;
     position: relative;
     overflow: hidden;
-    z-index: 2;
+    z-index: 3;
     @extend %transition-menu;
   }
   .lp__content {
