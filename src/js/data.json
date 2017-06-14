@@ -38,6 +38,23 @@
   ],
   "projects": [
     {
+      "title": "Valentine's Day 💑",
+      "subtitle": "Pen em homenagem ao dia 12 de Junho, Dia dos Namorados",
+      "description": "",
+      "tech": {
+        "description": "",
+        "used": [
+          "CSS",
+          "Javascript",
+          "Css3 Animations"
+        ]
+      },
+      "hosted": "codepen",
+      "created": "Junho 2017",
+      "url": "https://codepen.io/interaminense/full/WOxoyN/",
+      "img": "dia-dos-namorados.jpg"
+    },
+    {
       "title": "Trump Ipsum",
       "subtitle": "how many paragraphs do you need?",
       "description": "An extension for Sublime Text 2 and 3! It allows you to insert the best Lorem Ipsum Generator in the editor via menu items or keyboard shortcuts.",
