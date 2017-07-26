@@ -38,6 +38,23 @@
   ],
   "projects": [
     {
+      "title": "React UI Thermometer",
+      "subtitle": "A component has created with create-react-app",
+      "description": "",
+      "tech": {
+        "description": "<Thermometer theme={'light'} value={80} max={200} format={'$'} steps={3} size={'small'} height={180} />",
+        "used": [
+          "React",
+          "React-app",
+          "SCSS"
+        ]
+      },
+      "hosted": "github",
+      "created": "Julho 2017",
+      "url": "https://github.com/interaminense/react-ui-thermometer",
+      "img": "react-ui-thermometer.jpg"
+    },
+    {
       "title": "Valentine's Day 💑",
       "subtitle": "Pen em homenagem ao dia 12 de Junho, Dia dos Namorados",
       "description": "",
