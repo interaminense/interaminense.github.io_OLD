@@ -38,11 +38,11 @@
   ],
   "projects": [
     {
-      "title": "React UI Thermometer",
+      "title": "🌡️ React UI Thermometer",
       "subtitle": "A component has created with create-react-app",
       "description": "",
       "tech": {
-        "description": "<Thermometer theme={'light'} value={80} max={200} format={'$'} steps={3} size={'small'} height={180} />",
+        "description": "",
         "used": [
           "React",
           "React-app",
