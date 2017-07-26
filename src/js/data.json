@@ -38,8 +38,8 @@
   ],
   "projects": [
     {
-      "title": "🌡️ React UI Thermometer",
-      "subtitle": "A component has created with create-react-app",
+      "title": "React UI Thermometer",
+      "subtitle": "🌡️ A component has created with create-react-app",
       "description": "",
       "tech": {
         "description": "",
