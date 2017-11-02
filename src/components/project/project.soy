@@ -1,0 +1,45 @@
+{namespace Project}
+
+/**
+ * This renders the project
+ */
+{template .render}
+	{@param project: [
+		title: string,
+		subtitle: string,
+		hostedOn: string,
+		createdOn: string,
+		urlImage: string,
+		urlProject: string,
+		description: string
+	]}
+
+	<article>
+		<h2>{$project.title}</h2>
+		<h4>{$project.subtitle}</h4>
+		<span>{$project.hostedOn}</span>
+		<span>{$project.createdOn}</span>
+		<figure>
+			<img alt="" src="{$project.urlImage}" />
+		</figure>
+		<p>{$project.description}</p>
+		// <ul>
+		// 	{foreach $tag in $tags}
+		// 		<li>
+		// 			// {call .project_tag}
+		// 			// 	{param tag: $tag /}
+		// 			// {/call}
+		// 		</li>
+		// 	{/foreach}
+		// </ul>
+	</article>
+{/template}
+
+/**
+ * This renders the project tag
+ */
+{template .project_tag}
+	{@param tag: string}
+
+	<span>{$tag}</span>
+{/template}
