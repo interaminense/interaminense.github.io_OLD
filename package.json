@@ -1,0 +1,77 @@
+{
+	"name": "metal-interaminense",
+	"version": "0.0.0",
+	"description": "my website",
+	"license": "BSD",
+	"repository": "interaminense/metal-interaminense",
+	"engines": {
+		"node": ">=0.12.0",
+		"npm": ">=3.0.0"
+	},
+	"main": "lib/interaminense.js",
+	"jsnext:main": "src/interaminense.js",
+	"files": [
+		"lib",
+		"src",
+		"test"
+	],
+	"scripts": {
+		"build": "npm run soy && webpack",
+		"compile": "babel --presets metal -d lib/ src/",
+		"postinstall": "npm run build",
+		"prepublish": "npm run soy && npm run compile",
+		"soy": "metalsoy --soyDeps node_modules/metal*/src/**/*.soy node_modules/clay*/src/**/*.soy",
+		"test": "npm run soy && jest",
+		"dev": "concurrently -k 'npm run soy:watch' 'npm run start'",
+		"soy:watch": "metal-soy-watch",
+		"start": "webpack-dev-server --open"
+	},
+	"keywords": [
+		"metal"
+	],
+	"babel": {
+		"presets": [
+			"metal"
+		]
+	},
+	"dependencies": {
+		"font-awesome": "^4.7.0",
+		"metal-component": "^2.13.2",
+		"metal-soy": "^2.0.0",
+		"metal-state": "^2.13.2",
+		"moment": "^2.19.1",
+		"normalize.css": "^7.0.0",
+		"wedeploy": "^3.5.0"
+	},
+	"devDependencies": {
+		"babel-cli": "^6.4.5",
+		"babel-core": "^6.25.0",
+		"babel-loader": "^7.0.0",
+		"babel-plugin-transform-node-env-inline": "^0.1.1",
+		"babel-preset-metal": "^4.0.0",
+		"css-loader": "^0.28.4",
+		"eslint": "^4.10.0",
+		"extract-text-webpack-plugin": "^3.0.0",
+		"http-server": "^0.9.0",
+		"identity-obj-proxy": "^3.0.0",
+		"jest": "^20.0.4",
+		"metal-jest-serializer": "^1.0.1",
+		"metal-lerna-jest-resolver": "^1.0.0",
+		"metal-soy-watch": "github:fernandosouza/metal-soy-watch#v2.0",
+		"metal-tools-soy": "^4.2.1",
+		"node-sass": "^4.5.3",
+		"sass-loader": "^6.0.6",
+		"style-loader": "^0.18.2",
+		"webpack": "^3.0.0",
+		"webpack-dev-server": "^2.8.2"
+	},
+	"jest": {
+		"resolver": "metal-lerna-jest-resolver",
+		"snapshotSerializers": [
+			"metal-jest-serializer"
+		],
+		"moduleNameMapper": {
+			"^.+\\.scss$": "identity-obj-proxy"
+		}
+	}
+}
