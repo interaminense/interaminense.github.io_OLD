@@ -1,0 +1,59 @@
+{namespace interaminense}
+
+/**
+ * This renders the component's whole content.
+ */
+{template .render}
+	{@param mainClass: string}
+	{@param socialNetworks: list<[name: string, icon: string, url: string]>}
+	{@param profile: [name: string, description: html, urlImage: string, urlResume: string]}
+	{@param projects: list<[
+		title: string,
+		subtitle: string,
+		hostedOn: string,
+		createdOn: string,
+		urlImage: string,
+		urlProject: string,
+		description: string
+	]>}
+
+	<div class="{$mainClass}">
+
+		//header
+		<div class="{$mainClass}__header">
+			{call Header.render}
+				{param socialNetworks: $socialNetworks /}
+			{/call}
+		</div>
+
+		//content
+		<div class="{$mainClass}__content">
+
+			//profile
+			<div class="{$mainClass}__profile">
+				{call Profile.render}
+					{param profile: $profile /}
+				{/call}
+			</div>
+
+			//projects
+			<div class="{$mainClass}__projects">
+				<ul>
+					{foreach $project in $projects}
+						<li>
+							{call Project.render}
+								{param project: $project /}
+							{/call}
+						</li>
+					{/foreach}
+				</ul>
+			</div>
+		</div>
+
+		//footer
+		<div class="{$mainClass}__footer">
+			{call Footer.render /}
+		</div>
+	</div>
+
+{/template}
