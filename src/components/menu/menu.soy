@@ -1,0 +1,29 @@
+{namespace Menu}
+
+/**
+ * This renders the menu
+ */
+{template .render}
+	{@param socialNetworks: list<[name: string, icon: string, url: string]>}
+
+	<ul>
+		{foreach $socialNetwork in $socialNetworks}
+			<li>
+				{call .menuItem}
+					{param socialNetwork: $socialNetwork /}
+				{/call}
+			</li>
+		{/foreach}
+	</ul>
+{/template}
+
+/**
+ * This renders the menu
+ */
+{template .menuItem}
+	{@param socialNetwork: [name: string, icon: string, url: string]}
+
+	<a href="{$socialNetwork.url}" target="_blank" title="{$socialNetwork.name}">
+		<i class="fa fa-{$socialNetwork.icon}"></i>
+	</a>
+{/template}
