@@ -1,0 +1,15 @@
+{namespace Header}
+
+/**
+ * This renders the component's whole content.
+ */
+{template .render}
+	{@param socialNetworks: list<[name: string, icon: string, url: string]>}
+
+	<div>
+		<span>Header</span>
+		{call Menu.render}
+			{param socialNetworks: $socialNetworks /}
+		{/call}
+	</div>
+{/template}
