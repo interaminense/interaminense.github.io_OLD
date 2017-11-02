@@ -1,0 +1,15 @@
+{namespace Profile}
+
+/**
+ * This renders the profile
+ */
+{template .render}
+	{@param profile: [name: string, description: html, urlImage: string, urlResume: string]}
+
+	<div>
+		<img alt="{$profile.name}" src="{$profile.urlImage}" />
+		<h3>{$profile.name}</h3>
+		<article>{$profile.description}</article>
+		<a href="{$profile.urlResume}" target="_blank">my resume</a>
+	</div>
+{/template}
