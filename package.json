@@ -41,6 +41,7 @@
 		"metal-state": "^2.13.2",
 		"moment": "^2.19.1",
 		"normalize.css": "^7.0.0",
+		"simple-grid-css": "^1.0.1",
 		"wedeploy": "^3.5.0"
 	},
 	"devDependencies": {
