@@ -16,26 +16,41 @@ class interaminense extends Component {
 
 	created() {
 		console.log(this);
-
-		fetch("../src/data.json").then(function(response) {
-			let contentType = response.headers.get("content-type");
-			if(contentType && contentType.includes("application/json")) {
-				return response.json();
-			}
-			throw new TypeError("Oops, we haven't got JSON!");
-		})
-		.then(projects => {
-
-			//es6 projects: projects
-			this.setState({ projects });
-		})
-		.catch(function(error) { console.log(error); });
 	}
 
 	getDate(date) {
 		let FORMAT_DATE = "MMMM YYYY";
 
-		return Moment(date).format(FORMAT_DATE);
+		if(date) {
+			return Moment(date).format(FORMAT_DATE);
+		} else {
+			return Moment().format(FORMAT_DATE);
+		}
+	}
+
+	_handleSaveNewProject(event) {
+		event.preventDefault();
+
+		let target = event.target;
+
+		console.log(event.target);
+		let newProject = {
+			createdOn: this.getDate(target.createdOn.value),
+			description: target.description.value,
+			hostedOn: target.hostedOn.value,
+			subtitle: target.subtitle.value,
+			tags: [],
+			title: target.title.value,
+			urlImage: target.urlImage.value,
+			urlProject: target.urlProject.value
+		}
+
+		this.projects.push(newProject);
+		this.setState({ projects: this.projects });
+	}
+
+	_handleCreatedToday(event) {
+		this.setState({ createdToday: event.target.checked })
 	}
 }
 
@@ -62,7 +77,45 @@ interaminense.STATE = {
 		}
 	},
 	projects: {
-		value: []
+		value: [
+			{
+				createdOn: "Mach 2017",
+				description: "",
+				hostedOn: "github",
+				subtitle: "🌡️ A component has created with create-react-app",
+				tags: [
+					"tag-1",
+					"tag-2",
+					"tag-3",
+					"tag-4",
+					"tag-5",
+					"tag-6"
+				],
+				title: "React UI Thermometer",
+				urlImage: "http://www.interaminense.com/src/imgs/react-ui-thermometer.jpg",
+				urlProject: "https://github.com/interaminense/react-ui-thermometer"
+			},
+			{
+				createdOn: "Mach 2017",
+				description: "",
+				hostedOn: "github",
+				subtitle: "🌡️ A component has created with create-react-app",
+				tags: [
+					"tag-1",
+					"tag-2",
+					"tag-3",
+					"tag-4",
+					"tag-5",
+					"tag-6"
+				],
+				title: "React UI Thermometer",
+				urlImage: "http://www.interaminense.com/src/imgs/react-ui-thermometer.jpg",
+				urlProject: "https://github.com/interaminense/react-ui-thermometer"
+			}
+		]
+	},
+	createdToday: {
+		value: true
 	}
 }
 

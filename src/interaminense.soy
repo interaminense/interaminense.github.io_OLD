@@ -4,6 +4,7 @@
  * This renders the component's whole content.
  */
 {template .render}
+	{@param createdToday: bool}
 	{@param mainClass: string}
 	{@param socialNetworks: list<[name: string, icon: string, url: string]>}
 	{@param profile: [name: string, description: html, urlImage: string, urlResume: string]}
@@ -20,7 +21,7 @@
 	<div class="{$mainClass}">
 
 		//header
-		<div class="{$mainClass}__header">
+		<div class="hide {$mainClass}__header">
 			{call Header.render}
 				{param socialNetworks: $socialNetworks /}
 			{/call}
@@ -30,7 +31,7 @@
 		<div class="{$mainClass}__content">
 
 			//profile
-			<div class="{$mainClass}__profile">
+			<div class="hide {$mainClass}__profile">
 				{call Profile.render}
 					{param profile: $profile /}
 				{/call}
@@ -50,8 +51,91 @@
 			</div>
 		</div>
 
+		//new project
+		<form class="{$mainClass}__new-project" data-onsubmit="_handleSaveNewProject">
+
+			<div class="row">
+
+				<div class="col col-xs-6">
+					<div class="form-group">
+						<label>Title</label>
+						<input name="title" type="text" class="form-control" required />
+					</div>
+				</div>
+
+				<div class="col col-xs-6">
+					<div class="form-group">
+						<label>Subtitle</label>
+						<input name="subtitle" type="text" class="form-control" />
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col col-xs-12">
+					<div class="form-group">
+						<label>Description</label>
+						<input name="description" type="text" class="form-control" />
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col col-xs-2">
+					<div class="form-group">
+						<label>
+							<input type="checkbox"
+								data-onchange="_handleCreatedToday"
+								{if $createdToday}checked{/if} /> created today
+						</label>
+					</div>
+				</div>
+
+				<div class="{$createdToday ? 'hide' : ''} col col-xs-10">
+					<div class="form-group">
+						<label>Created on</label>
+						<input name="createdOn" {if not $createdToday}required{/if} type="date" class="form-control" />
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col col-xs-4">
+					<div class="form-group">
+						<label>Hosted on</label>
+						<select name="hostedOn" class="form-control">
+							<option value="github">github</option>
+							<option value="codepen">codepen</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="col col-xs-4">
+					<div class="form-group">
+						<label>Image url</label>
+						<input name="urlImage" type="text" class="form-control" required />
+					</div>
+				</div>
+
+				<div class="col col-xs-4">
+					<div class="form-group">
+						<label>Project url</label>
+						<input name="urlProject" type="text" class="form-control" required />
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col col-xs-12">
+					<button class="btn btn-default" type="button">cancel</button>
+					<button class="btn btn-primary" type="submit">save</button>
+				</div>
+			</div>
+
+		</form>
+
 		//footer
-		<div class="{$mainClass}__footer">
+		<div class="hide {$mainClass}__footer">
 			{call Footer.render /}
 		</div>
 	</div>
