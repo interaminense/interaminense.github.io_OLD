@@ -1,0 +1,22 @@
+* {
+	box-sizing: border-box;
+}
+
+.hide {
+	display: none !important;
+}
+
+.form-group {
+	margin-bottom: 1rem;
+
+	label {
+		display: block;
+		width: 100%;
+		margin-bottom: .5rem;
+	}
+
+	.form-control {
+		width: 100%;
+		display: block;
+	}
+}
