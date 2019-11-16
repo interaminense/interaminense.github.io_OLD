@@ -72,24 +72,6 @@
       "img": "dia-dos-namorados.jpg"
     },
     {
-      "title": "Trump Ipsum",
-      "subtitle": "how many paragraphs do you need?",
-      "description": "An extension for Sublime Text 2 and 3! It allows you to insert the best Lorem Ipsum Generator in the editor via menu items or keyboard shortcuts.",
-      "tech": {
-        "description": "I am responsible for the visual and front-end creation of the page. Technologies used:",
-        "used": [
-          "Framework Materializecss",
-          "SASS",
-          "AngularJS",
-          "Fontello for icons"
-        ]
-      },
-      "hosted": "github",
-      "created": "April 2017",
-      "url": "http://www.trumpipsum.org/",
-      "img": "trump-ipsum.jpg"
-    },
-    {
       "title": "BeerJS Recife",
       "subtitle": "Compartilhamos as mesmas paixões: Cerveja e Javascript 🍻",
       "description": "A proposta da nossa comunidade é reunir desenvolvedores que compartilhem as mesmas paixões, isto é, cerveja e javascript (e não importa se você utiliza o js como linguagem principal ou auxiliar, se você é front-end ou back-end). Temos como objetivo, criar um espaço onde as pessoas possam compartilhar suas experiências sobre tecnologia, discutir tendências, frameworks, séries, mundo geek, (etc..) e ao mesmo tempo se divertir com boas músicas, bons papos e cerveja!",
